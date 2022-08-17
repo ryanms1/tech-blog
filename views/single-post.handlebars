@@ -1,0 +1,23 @@
+<section>
+    <div class="border">
+        {{> post-info post}}
+
+        {{#if loggedIn}}
+        <form class="comment-form">
+            <div>
+                <textarea name="comment-body" maxlength="80"></textarea>
+            </div>
+
+            <div>
+                <button type="submit">add comment</button>
+            </div>
+        </form>
+        {{/if}}
+    </div>
+
+    {{> comments post.comments}}
+
+    {{#if loggedIn}}
+    <script src="/javascript/comment.js"></script>
+    {{/if}}
+</section>
